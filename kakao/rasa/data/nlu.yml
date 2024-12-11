@@ -1,0 +1,77 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - 안녕하세요
+    - 상담원 연결해주세요
+    - 문의 좀 할게요
+
+- intent: goodbye
+  examples: |
+    - 감사합니다
+    - 안녕히 계세요
+    - 끊을게요
+
+- intent: stock_inquiry
+  examples: |
+    - [청바지](product) 재고 있나요?
+    - [티셔츠](product) 재고 확인해주세요
+    - [러닝화](product) 구매 가능한가요?
+    - [가죽 재킷](product) 재고 있나요?
+    - [백팩](product) 구매 가능한가요?
+    - [손목시계](product) 남아있나요?
+
+- intent: size_inquiry
+  examples: |
+    - [청바지](product) 사이즈 어떻게 되나요?
+    - [티셔츠](product) 어떤 사이즈가 있나요?
+    - [러닝화](product) 사이즈 알려주세요
+    - [가죽 재킷](product) 사이즈 종류가 어떻게 되나요?
+    - [백팩](product) 크기가 어떻게 되나요?
+    - [손목시계](product) 사이즈 옵션 있나요?
+
+- intent: color_inquiry
+  examples: |
+    - [청바지](product) 색상 종류가 어떻게 되나요?
+    - [티셔츠](product) 어떤 색상이 있나요?
+    - [러닝화](product) 색상 알려주세요
+    - [가죽 재킷](product) 색상 옵션이 뭐가 있나요?
+    - [백팩](product) 어떤 색상으로 나왔나요?
+    - [손목시계](product) 색상 종류 알려주세요
+
+- intent: price_inquiry
+  examples: |
+    - [청바지](product) 가격이 얼마인가요?
+    - [티셔츠](product) 얼마에요?
+    - [러닝화](product) 가격 좀 알려주세요
+    - [가죽 재킷](product) 얼마인가요?
+    - [백팩](product) 가격이 어떻게 되나요?
+    - [손목시계](product) 얼마에 파나요?
+
+- intent: delivery_inquiry
+  examples: |
+    - 배송 기간이 얼마나 걸리나요?
+    - 언제쯤 받을 수 있을까요?
+    - 오늘 주문하면 언제 도착하나요?
+
+- intent: return_exchange
+  examples: |
+    - 반품하고 싶어요
+    - 교환 가능한가요?
+    - 환불 절차가 어떻게 되나요?
+
+- lookup: product
+  examples: |
+    - 청바지
+    - 티셔츠
+    - 운동화
+    - 가죽 재킷
+    - 면바지
+    - 손목시계
+    - 백팩
+    - 선글라스
+
+- regex: product
+  examples: |
+    - 청바지|티셔츠|운동화|면바지|손목시계|백팩|선글라스|재킷

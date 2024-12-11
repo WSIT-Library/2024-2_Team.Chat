@@ -1,0 +1,59 @@
+version: "3.1"
+
+stories:
+
+- story: greet and goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: stock inquiry
+  steps:
+  - intent: stock_inquiry
+  - action: action_stock_info
+
+- story: color inquiry
+  steps:
+  - intent: color_inquiry
+  - action: action_color_info
+
+- story: size inquiry
+  steps:
+  - intent: size_inquiry
+  - action: action_size_info
+
+- story: price inquiry
+  steps:
+  - intent: price_inquiry
+  - action: action_price_info
+
+- story: delivery inquiry
+  steps:
+  - intent: delivery_inquiry
+  - action: utter_delivery_info
+
+- story: return exchange inquiry
+  steps:
+  - intent: return_exchange
+  - action: utter_return_exchange_info
+
+- story: full conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: stock_inquiry
+  - action: action_stock_info
+  - intent: color_inquiry
+  - action: action_color_info
+  - intent: size_inquiry
+  - action: action_size_info
+  - intent: price_inquiry
+  - action: action_price_info
+  - intent: delivery_inquiry
+  - action: utter_delivery_info
+  - intent: return_exchange
+  - action: utter_return_exchange_info
+  - intent: goodbye
+  - action: utter_goodbye

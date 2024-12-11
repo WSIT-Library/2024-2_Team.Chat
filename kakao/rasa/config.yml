@@ -1,0 +1,35 @@
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20240926-143231-gritty-bulldozer
+
+language: ko
+
+pipeline:
+- name: SpacyNLP
+  model: "ko_core_news_md"
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+- name: SpacyEntityExtractor
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+  epochs: 100
+  constrain_similarities: true
+- name: EntitySynonymMapper
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+- name: RegexEntityExtractor
+  case_sensitive: False
+  use_lookup_tables: True
+  use_regexes: True
+
+policies:
+- name: MemoizationPolicy
+- name: TEDPolicy
+  max_history: 5
+  epochs: 100
+- name: RulePolicy
